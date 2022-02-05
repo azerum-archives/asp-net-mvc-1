@@ -1,0 +1,41 @@
+﻿@model Intro.Models.ViewModels.UserAccountVm
+
+@{
+    ViewBag.Title = "Account";
+}
+
+<h2>Your Account</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Email is confirmed?
+        </dt>
+
+        @if (Model.EmailIsConfirmed)
+        {
+            <dd class="text-success">Yes</dd>
+        }
+        else
+        {
+            <dd class="text-danger">No</dd>
+        }
+    </dl>
+</div>
